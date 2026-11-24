@@ -1,0 +1,12 @@
+{
+  "baseline": {
+    "exact": 24,
+    "rows": 60,
+    "unsupported_values": 48
+  },
+  "candidate": {
+    "exact": 60,
+    "rows": 60,
+    "unsupported_values": 0
+  }
+}

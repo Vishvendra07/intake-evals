@@ -1,0 +1,955 @@
+{
+  "baseline": {
+    "rows": 60,
+    "exact": 24,
+    "unsupported_values": 48,
+    "fields": {
+      "program": {
+        "tp": 18,
+        "fp": 30,
+        "fn": 24,
+        "precision": 0.375,
+        "recall": 0.4286
+      },
+      "term": {
+        "tp": 24,
+        "fp": 12,
+        "fn": 6,
+        "precision": 0.6667,
+        "recall": 0.8
+      },
+      "action": {
+        "tp": 30,
+        "fp": 6,
+        "fn": 0,
+        "precision": 0.8333,
+        "recall": 1.0
+      }
+    },
+    "categories": {
+      "direct": {
+        "rows": 6,
+        "exact": 6
+      },
+      "correction": {
+        "rows": 6,
+        "exact": 0
+      },
+      "negated": {
+        "rows": 6,
+        "exact": 0
+      },
+      "uncertain": {
+        "rows": 6,
+        "exact": 0
+      },
+      "withdrawn": {
+        "rows": 6,
+        "exact": 0
+      },
+      "no answer": {
+        "rows": 6,
+        "exact": 6
+      },
+      "partial": {
+        "rows": 6,
+        "exact": 6
+      },
+      "quoted example": {
+        "rows": 6,
+        "exact": 6
+      },
+      "long thread": {
+        "rows": 6,
+        "exact": 0
+      },
+      "mixed intent": {
+        "rows": 6,
+        "exact": 0
+      }
+    },
+    "failures": [
+      {
+        "id": "eval-02",
+        "category": "correction",
+        "expected": {
+          "program": "computer science",
+          "term": "fall 2027",
+          "action": "review my documents"
+        },
+        "output": {
+          "program": {
+            "value": "data science",
+            "turn": 2,
+            "quote": "data science"
+          },
+          "term": {
+            "value": "spring 2027",
+            "turn": 2,
+            "quote": "spring 2027"
+          },
+          "action": {
+            "value": "review my documents",
+            "turn": 2,
+            "quote": "review my documents"
+          }
+        }
+      },
+      {
+        "id": "eval-03",
+        "category": "negated",
+        "expected": {
+          "program": "computer science",
+          "term": "fall 2027"
+        },
+        "output": {
+          "program": {
+            "value": "data science",
+            "turn": 2,
+            "quote": "data science"
+          },
+          "term": {
+            "value": "fall 2027",
+            "turn": 2,
+            "quote": "fall 2027"
+          }
+        }
+      },
+      {
+        "id": "eval-04",
+        "category": "uncertain",
+        "expected": {
+          "program": "computer science"
+        },
+        "output": {
+          "program": {
+            "value": "data science",
+            "turn": 2,
+            "quote": "data science"
+          },
+          "term": {
+            "value": "fall 2027",
+            "turn": 4,
+            "quote": "fall 2027"
+          }
+        }
+      },
+      {
+        "id": "eval-05",
+        "category": "withdrawn",
+        "expected": {
+          "program": "computer science"
+        },
+        "output": {
+          "action": {
+            "value": "review my documents",
+            "turn": 2,
+            "quote": "review my documents"
+          },
+          "program": {
+            "value": "computer science",
+            "turn": 2,
+            "quote": "computer science"
+          }
+        }
+      },
+      {
+        "id": "eval-09",
+        "category": "long thread",
+        "expected": {
+          "program": "computer science",
+          "term": "fall 2027",
+          "action": "send a checklist"
+        },
+        "output": {
+          "program": {
+            "value": "data science",
+            "turn": 2,
+            "quote": "data science"
+          },
+          "term": {
+            "value": "fall 2027",
+            "turn": 4,
+            "quote": "fall 2027"
+          },
+          "action": {
+            "value": "send a checklist",
+            "turn": 4,
+            "quote": "send a checklist"
+          }
+        }
+      },
+      {
+        "id": "eval-10",
+        "category": "mixed intent",
+        "expected": {
+          "term": "fall 2027",
+          "action": "schedule a call"
+        },
+        "output": {
+          "program": {
+            "value": "data science",
+            "turn": 2,
+            "quote": "data science"
+          },
+          "action": {
+            "value": "schedule a call",
+            "turn": 2,
+            "quote": "schedule a call"
+          },
+          "term": {
+            "value": "fall 2027",
+            "turn": 4,
+            "quote": "fall 2027"
+          }
+        }
+      },
+      {
+        "id": "eval-12",
+        "category": "correction",
+        "expected": {
+          "program": "data science",
+          "term": "fall 2028",
+          "action": "send a checklist"
+        },
+        "output": {
+          "program": {
+            "value": "public health",
+            "turn": 2,
+            "quote": "public health"
+          },
+          "term": {
+            "value": "spring 2028",
+            "turn": 2,
+            "quote": "spring 2028"
+          },
+          "action": {
+            "value": "send a checklist",
+            "turn": 2,
+            "quote": "send a checklist"
+          }
+        }
+      },
+      {
+        "id": "eval-13",
+        "category": "negated",
+        "expected": {
+          "program": "data science",
+          "term": "fall 2028"
+        },
+        "output": {
+          "program": {
+            "value": "public health",
+            "turn": 2,
+            "quote": "public health"
+          },
+          "term": {
+            "value": "fall 2028",
+            "turn": 2,
+            "quote": "fall 2028"
+          }
+        }
+      },
+      {
+        "id": "eval-14",
+        "category": "uncertain",
+        "expected": {
+          "program": "data science"
+        },
+        "output": {
+          "program": {
+            "value": "public health",
+            "turn": 2,
+            "quote": "public health"
+          },
+          "term": {
+            "value": "fall 2028",
+            "turn": 4,
+            "quote": "fall 2028"
+          }
+        }
+      },
+      {
+        "id": "eval-15",
+        "category": "withdrawn",
+        "expected": {
+          "program": "data science"
+        },
+        "output": {
+          "action": {
+            "value": "send a checklist",
+            "turn": 2,
+            "quote": "send a checklist"
+          },
+          "program": {
+            "value": "data science",
+            "turn": 2,
+            "quote": "data science"
+          }
+        }
+      },
+      {
+        "id": "eval-19",
+        "category": "long thread",
+        "expected": {
+          "program": "data science",
+          "term": "fall 2028",
+          "action": "schedule a call"
+        },
+        "output": {
+          "program": {
+            "value": "public health",
+            "turn": 2,
+            "quote": "public health"
+          },
+          "term": {
+            "value": "fall 2028",
+            "turn": 4,
+            "quote": "fall 2028"
+          },
+          "action": {
+            "value": "schedule a call",
+            "turn": 4,
+            "quote": "schedule a call"
+          }
+        }
+      },
+      {
+        "id": "eval-20",
+        "category": "mixed intent",
+        "expected": {
+          "term": "fall 2028",
+          "action": "review my documents"
+        },
+        "output": {
+          "program": {
+            "value": "public health",
+            "turn": 2,
+            "quote": "public health"
+          },
+          "action": {
+            "value": "review my documents",
+            "turn": 2,
+            "quote": "review my documents"
+          },
+          "term": {
+            "value": "fall 2028",
+            "turn": 4,
+            "quote": "fall 2028"
+          }
+        }
+      },
+      {
+        "id": "eval-22",
+        "category": "correction",
+        "expected": {
+          "program": "public health",
+          "term": "fall 2029",
+          "action": "schedule a call"
+        },
+        "output": {
+          "program": {
+            "value": "mechanical engineering",
+            "turn": 2,
+            "quote": "mechanical engineering"
+          },
+          "term": {
+            "value": "spring 2029",
+            "turn": 2,
+            "quote": "spring 2029"
+          },
+          "action": {
+            "value": "schedule a call",
+            "turn": 2,
+            "quote": "schedule a call"
+          }
+        }
+      },
+      {
+        "id": "eval-23",
+        "category": "negated",
+        "expected": {
+          "program": "public health",
+          "term": "fall 2029"
+        },
+        "output": {
+          "program": {
+            "value": "mechanical engineering",
+            "turn": 2,
+            "quote": "mechanical engineering"
+          },
+          "term": {
+            "value": "fall 2029",
+            "turn": 2,
+            "quote": "fall 2029"
+          }
+        }
+      },
+      {
+        "id": "eval-24",
+        "category": "uncertain",
+        "expected": {
+          "program": "public health"
+        },
+        "output": {
+          "program": {
+            "value": "mechanical engineering",
+            "turn": 2,
+            "quote": "mechanical engineering"
+          },
+          "term": {
+            "value": "fall 2029",
+            "turn": 4,
+            "quote": "fall 2029"
+          }
+        }
+      },
+      {
+        "id": "eval-25",
+        "category": "withdrawn",
+        "expected": {
+          "program": "public health"
+        },
+        "output": {
+          "action": {
+            "value": "schedule a call",
+            "turn": 2,
+            "quote": "schedule a call"
+          },
+          "program": {
+            "value": "public health",
+            "turn": 2,
+            "quote": "public health"
+          }
+        }
+      },
+      {
+        "id": "eval-29",
+        "category": "long thread",
+        "expected": {
+          "program": "public health",
+          "term": "fall 2029",
+          "action": "review my documents"
+        },
+        "output": {
+          "program": {
+            "value": "mechanical engineering",
+            "turn": 2,
+            "quote": "mechanical engineering"
+          },
+          "term": {
+            "value": "fall 2029",
+            "turn": 4,
+            "quote": "fall 2029"
+          },
+          "action": {
+            "value": "review my documents",
+            "turn": 4,
+            "quote": "review my documents"
+          }
+        }
+      },
+      {
+        "id": "eval-30",
+        "category": "mixed intent",
+        "expected": {
+          "term": "fall 2029",
+          "action": "send a checklist"
+        },
+        "output": {
+          "program": {
+            "value": "mechanical engineering",
+            "turn": 2,
+            "quote": "mechanical engineering"
+          },
+          "action": {
+            "value": "send a checklist",
+            "turn": 2,
+            "quote": "send a checklist"
+          },
+          "term": {
+            "value": "fall 2029",
+            "turn": 4,
+            "quote": "fall 2029"
+          }
+        }
+      },
+      {
+        "id": "eval-32",
+        "category": "correction",
+        "expected": {
+          "program": "mechanical engineering",
+          "term": "fall 2030",
+          "action": "review my documents"
+        },
+        "output": {
+          "program": {
+            "value": "finance",
+            "turn": 2,
+            "quote": "finance"
+          },
+          "term": {
+            "value": "spring 2030",
+            "turn": 2,
+            "quote": "spring 2030"
+          },
+          "action": {
+            "value": "review my documents",
+            "turn": 2,
+            "quote": "review my documents"
+          }
+        }
+      },
+      {
+        "id": "eval-33",
+        "category": "negated",
+        "expected": {
+          "program": "mechanical engineering",
+          "term": "fall 2030"
+        },
+        "output": {
+          "program": {
+            "value": "finance",
+            "turn": 2,
+            "quote": "finance"
+          },
+          "term": {
+            "value": "fall 2030",
+            "turn": 2,
+            "quote": "fall 2030"
+          }
+        }
+      },
+      {
+        "id": "eval-34",
+        "category": "uncertain",
+        "expected": {
+          "program": "mechanical engineering"
+        },
+        "output": {
+          "program": {
+            "value": "finance",
+            "turn": 2,
+            "quote": "finance"
+          },
+          "term": {
+            "value": "fall 2030",
+            "turn": 4,
+            "quote": "fall 2030"
+          }
+        }
+      },
+      {
+        "id": "eval-35",
+        "category": "withdrawn",
+        "expected": {
+          "program": "mechanical engineering"
+        },
+        "output": {
+          "action": {
+            "value": "review my documents",
+            "turn": 2,
+            "quote": "review my documents"
+          },
+          "program": {
+            "value": "mechanical engineering",
+            "turn": 2,
+            "quote": "mechanical engineering"
+          }
+        }
+      },
+      {
+        "id": "eval-39",
+        "category": "long thread",
+        "expected": {
+          "program": "mechanical engineering",
+          "term": "fall 2030",
+          "action": "send a checklist"
+        },
+        "output": {
+          "program": {
+            "value": "finance",
+            "turn": 2,
+            "quote": "finance"
+          },
+          "term": {
+            "value": "fall 2030",
+            "turn": 4,
+            "quote": "fall 2030"
+          },
+          "action": {
+            "value": "send a checklist",
+            "turn": 4,
+            "quote": "send a checklist"
+          }
+        }
+      },
+      {
+        "id": "eval-40",
+        "category": "mixed intent",
+        "expected": {
+          "term": "fall 2030",
+          "action": "schedule a call"
+        },
+        "output": {
+          "program": {
+            "value": "finance",
+            "turn": 2,
+            "quote": "finance"
+          },
+          "action": {
+            "value": "schedule a call",
+            "turn": 2,
+            "quote": "schedule a call"
+          },
+          "term": {
+            "value": "fall 2030",
+            "turn": 4,
+            "quote": "fall 2030"
+          }
+        }
+      },
+      {
+        "id": "eval-42",
+        "category": "correction",
+        "expected": {
+          "program": "finance",
+          "term": "fall 2031",
+          "action": "send a checklist"
+        },
+        "output": {
+          "program": {
+            "value": "architecture",
+            "turn": 2,
+            "quote": "architecture"
+          },
+          "term": {
+            "value": "spring 2031",
+            "turn": 2,
+            "quote": "spring 2031"
+          },
+          "action": {
+            "value": "send a checklist",
+            "turn": 2,
+            "quote": "send a checklist"
+          }
+        }
+      },
+      {
+        "id": "eval-43",
+        "category": "negated",
+        "expected": {
+          "program": "finance",
+          "term": "fall 2031"
+        },
+        "output": {
+          "program": {
+            "value": "architecture",
+            "turn": 2,
+            "quote": "architecture"
+          },
+          "term": {
+            "value": "fall 2031",
+            "turn": 2,
+            "quote": "fall 2031"
+          }
+        }
+      },
+      {
+        "id": "eval-44",
+        "category": "uncertain",
+        "expected": {
+          "program": "finance"
+        },
+        "output": {
+          "program": {
+            "value": "architecture",
+            "turn": 2,
+            "quote": "architecture"
+          },
+          "term": {
+            "value": "fall 2031",
+            "turn": 4,
+            "quote": "fall 2031"
+          }
+        }
+      },
+      {
+        "id": "eval-45",
+        "category": "withdrawn",
+        "expected": {
+          "program": "finance"
+        },
+        "output": {
+          "action": {
+            "value": "send a checklist",
+            "turn": 2,
+            "quote": "send a checklist"
+          },
+          "program": {
+            "value": "finance",
+            "turn": 2,
+            "quote": "finance"
+          }
+        }
+      },
+      {
+        "id": "eval-49",
+        "category": "long thread",
+        "expected": {
+          "program": "finance",
+          "term": "fall 2031",
+          "action": "schedule a call"
+        },
+        "output": {
+          "program": {
+            "value": "architecture",
+            "turn": 2,
+            "quote": "architecture"
+          },
+          "term": {
+            "value": "fall 2031",
+            "turn": 4,
+            "quote": "fall 2031"
+          },
+          "action": {
+            "value": "schedule a call",
+            "turn": 4,
+            "quote": "schedule a call"
+          }
+        }
+      },
+      {
+        "id": "eval-50",
+        "category": "mixed intent",
+        "expected": {
+          "term": "fall 2031",
+          "action": "review my documents"
+        },
+        "output": {
+          "program": {
+            "value": "architecture",
+            "turn": 2,
+            "quote": "architecture"
+          },
+          "action": {
+            "value": "review my documents",
+            "turn": 2,
+            "quote": "review my documents"
+          },
+          "term": {
+            "value": "fall 2031",
+            "turn": 4,
+            "quote": "fall 2031"
+          }
+        }
+      },
+      {
+        "id": "eval-52",
+        "category": "correction",
+        "expected": {
+          "program": "architecture",
+          "term": "fall 2032",
+          "action": "schedule a call"
+        },
+        "output": {
+          "program": {
+            "value": "computer science",
+            "turn": 2,
+            "quote": "computer science"
+          },
+          "term": {
+            "value": "spring 2032",
+            "turn": 2,
+            "quote": "spring 2032"
+          },
+          "action": {
+            "value": "schedule a call",
+            "turn": 2,
+            "quote": "schedule a call"
+          }
+        }
+      },
+      {
+        "id": "eval-53",
+        "category": "negated",
+        "expected": {
+          "program": "architecture",
+          "term": "fall 2032"
+        },
+        "output": {
+          "program": {
+            "value": "computer science",
+            "turn": 2,
+            "quote": "computer science"
+          },
+          "term": {
+            "value": "fall 2032",
+            "turn": 2,
+            "quote": "fall 2032"
+          }
+        }
+      },
+      {
+        "id": "eval-54",
+        "category": "uncertain",
+        "expected": {
+          "program": "architecture"
+        },
+        "output": {
+          "program": {
+            "value": "computer science",
+            "turn": 2,
+            "quote": "computer science"
+          },
+          "term": {
+            "value": "fall 2032",
+            "turn": 4,
+            "quote": "fall 2032"
+          }
+        }
+      },
+      {
+        "id": "eval-55",
+        "category": "withdrawn",
+        "expected": {
+          "program": "architecture"
+        },
+        "output": {
+          "action": {
+            "value": "schedule a call",
+            "turn": 2,
+            "quote": "schedule a call"
+          },
+          "program": {
+            "value": "architecture",
+            "turn": 2,
+            "quote": "architecture"
+          }
+        }
+      },
+      {
+        "id": "eval-59",
+        "category": "long thread",
+        "expected": {
+          "program": "architecture",
+          "term": "fall 2032",
+          "action": "review my documents"
+        },
+        "output": {
+          "program": {
+            "value": "computer science",
+            "turn": 2,
+            "quote": "computer science"
+          },
+          "term": {
+            "value": "fall 2032",
+            "turn": 4,
+            "quote": "fall 2032"
+          },
+          "action": {
+            "value": "review my documents",
+            "turn": 4,
+            "quote": "review my documents"
+          }
+        }
+      },
+      {
+        "id": "eval-60",
+        "category": "mixed intent",
+        "expected": {
+          "term": "fall 2032",
+          "action": "send a checklist"
+        },
+        "output": {
+          "program": {
+            "value": "computer science",
+            "turn": 2,
+            "quote": "computer science"
+          },
+          "action": {
+            "value": "send a checklist",
+            "turn": 2,
+            "quote": "send a checklist"
+          },
+          "term": {
+            "value": "fall 2032",
+            "turn": 4,
+            "quote": "fall 2032"
+          }
+        }
+      }
+    ]
+  },
+  "candidate": {
+    "rows": 60,
+    "exact": 60,
+    "unsupported_values": 0,
+    "fields": {
+      "program": {
+        "tp": 42,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "term": {
+        "tp": 30,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "action": {
+        "tp": 30,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      }
+    },
+    "categories": {
+      "direct": {
+        "rows": 6,
+        "exact": 6
+      },
+      "correction": {
+        "rows": 6,
+        "exact": 6
+      },
+      "negated": {
+        "rows": 6,
+        "exact": 6
+      },
+      "uncertain": {
+        "rows": 6,
+        "exact": 6
+      },
+      "withdrawn": {
+        "rows": 6,
+        "exact": 6
+      },
+      "no answer": {
+        "rows": 6,
+        "exact": 6
+      },
+      "partial": {
+        "rows": 6,
+        "exact": 6
+      },
+      "quoted example": {
+        "rows": 6,
+        "exact": 6
+      },
+      "long thread": {
+        "rows": 6,
+        "exact": 6
+      },
+      "mixed intent": {
+        "rows": 6,
+        "exact": 6
+      }
+    },
+    "failures": []
+  }
+}
